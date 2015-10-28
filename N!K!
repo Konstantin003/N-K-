@@ -5,37 +5,45 @@ main()
 	int n;
 	int k;
 	int KN;
-	int result=1;
+	int result = 1;
 	int result2 = 1;
 	int result3 = 1;
-	int counter=1;
+	int counter = 1;
 
 	printf("N:");
 	scanf_s("%d", &n);
 	printf("K:");
 	scanf_s("%d", &k);
 	KN = (k - n);
-	if (n <= 0);
+	if (n <= 1 || k <= 1)
+	{
+		printf("opitai pak");
+	return 0;
+	}
 	else if (n > 0)
 	{
-			while (counter <= n){
-				result = result*n;
-				n--;				
-			}
-			while (counter <= k){
-				result2 = result2*k;
-				k--;
-			}
+		while (counter <= n)
+		{
+			result = result*n;
+			n--;
+		}
+		while (counter <= k)
+		{
+			result2 = result2*k;
+			k--;
+		}
 
-			if (KN <= 0) { KN = -KN; }
-			while (counter <= KN){
-				result3 = result3*KN;
-				KN--;
-			}
+		if (KN <= 0) { KN = -KN; }
+		while (counter <= KN)
+		{
+			result3 = result3*KN;
+			KN--;
+		}
 		printf("%d\n", result);
 		printf("%d\n", result2);
 		printf("%d\n", result3);
-		}
+		printf("%d\n", result*result2);
+	}
 	system("pause");
 	return 0;
 }
